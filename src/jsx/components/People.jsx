@@ -42,10 +42,8 @@ function People() {
     <>
       <div className="people_container" ref={visRef}>
         {
-        [...Array(80)].map(() => (
-          <span key={uuidv4()}>
-            <img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_person.svg`} alt="Person icon" />
-          </span>
+        [...Array(80)].map((val, i) => (
+          <span key={uuidv4()}><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/2023-handbook_of_statistics_person${(i < 66) ? '_green' : ''}.svg`} alt="Person icon" /></span>
         ))
       }
       </div>

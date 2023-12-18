@@ -18,13 +18,13 @@ import NumberAnimation from './components/NumberAnimation.jsx';
 
 const analytics = window.gtag || undefined;
 
-// const appID = '#app-root-2022-handbook_of_statistics';
+// const appID = '#app-root-2023-handbook_of_statistics';
 
 function App() {
   const track = (label, name) => {
     if (typeof analytics !== 'undefined') {
       analytics('event', name, {
-        event_category: '2022-hbs_report',
+        event_category: '2023-hbs_report',
         event_label: label,
         transport_type: 'beacon'
       });
@@ -62,7 +62,7 @@ function App() {
                           .pasteString('<span class="highlight">development</span>?')
                           .typeString('')
                           .pauseFor(1500)
-                          .pasteString('<br /><br /><strong>UNCTAD’s<br /><span class="highlight">Handbook of Statistics 2022</span> has all the data.</strong>')
+                          .pasteString('<br /><br /><strong>UNCTAD’s<br /><span class="highlight">Handbook of Statistics 2023</span> has all the data.</strong>')
                           .start();
                       }}
                     />
@@ -70,15 +70,15 @@ function App() {
                   <p>
                     Browse the key messages or
                     {' '}
-                    <a href="https://unctad.org/webflyer/handbook-statistics-2022" onClick={() => track('Click', 'webflyer_link')}>download the report</a>
+                    <a href="#anchor_download" onClick={() => track('Click', 'downloads_link')}>download the report</a>
                     .
                   </p>
                 </div>
                 <div className="infograph_container">
-                  <img className="infograph" src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_infograph.svg`} alt="Infograph" />
+                  <img className="infograph" src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/2023-handbook_of_statistics_infograph.svg`} alt="Infograph" />
                 </div>
                 <div className="unctad_logo_container">
-                  <img src="https://unctad.org/sites/default/files/2022-11/unctad_logo.svg" alt="UNCTAD logo" />
+                  <img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/unctad_logo.png`} alt="UNCTAD logo" />
                 </div>
               </>
             )}
@@ -86,38 +86,6 @@ function App() {
         </div>
         <Arrows next="2" />
       </div>
-      {/** ******
-        Page 2
-      ********
-      <div className="content_wrapper content_wrapper_2">
-        <div className="content_container">
-          <IsVisible once>
-            {(isVisible) => (
-              <>
-                {
-                  isVisible && track('Scroll', 'card_2')
-                }
-                <div className={`content ${isVisible ? 'visible' : ''}`}>
-                  <h3>
-                    <span className="highlight">
-                      Global economic growth
-                    </span>
-                    {' '}
-                    will slow in 2022
-                  </h3>
-                  <NumberAnimation labels={['2021', '2022']} prefix="+" suffix="%" values={[5.7, 3.3]} />
-                  <p>UNCTAD nowcasts show both trade in goods and services will slow down. Growth in merchandise exports is expected to decline by half.</p>
-                </div>
-                <div className="bottom">
-                  <a href="https://hbs.unctad.org/gross-domestic-product/" onClick={() => track('Click', 'card_2_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
-                  <div className="source"><em>Source</em> World’s real GDP in 2022 is based on UNCTAD nowcasts</div>
-                </div>
-              </>
-            )}
-          </IsVisible>
-        </div>
-        <Arrows next="3" />
-      </div> */}
       {/** ******
         Page 3
       ******** */}
@@ -127,15 +95,15 @@ function App() {
             {(isVisible) => (
               <>
                 {
-                  isVisible && track('Scroll', 'card_3')
+                  isVisible && track('Scroll', 'card_4')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
                   <h3>
-                    <span className="highlight">Trade surplus</span>
+                    <span className="highlight">Goods exports</span>
                     {' '}
-                    of developing economies increased
+                    declined in the first half of 2023 after an increase in 2022.
                   </h3>
-                  <p>The increase was mirrored by a widening trade deficit for developed economies. The surplus increased most in Africa.</p>
+                  <NumberAnimation labels={['2022', 'Jan-Jun 2023']} prefix="+" suffix="%" values={[11.4, -4.6]} />
                 </div>
                 <div className="bottom">
                   <a href="https://hbs.unctad.org/total-merchandise-trade/" onClick={() => track('Click', 'card_3_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
@@ -166,14 +134,9 @@ function App() {
                   <h3>
                     <span className="highlight">Trade in services</span>
                     {' '}
-                    increased but did not reach
-                    {' '}
-                    <span className="nowrap">pre-pandemic</span>
-                    {' '}
-                    levels
+                    rebounded in 2022 and UNCTAD nowcasts growth in 2023.
                   </h3>
-                  <NumberAnimation labels={['2020', '2021']} prefix="+" suffix="%" values={[-17.7, 17.2]} />
-                  <p>In 2022, UNCTAD nowcasts show continued growth of +14.6%.</p>
+                  <NumberAnimation labels={['2022', '2023']} prefix="+" suffix="%" values={[14.8, 7.0]} />
                 </div>
                 <div className="bottom">
                   <a href="https://hbs.unctad.org/total-trade-in-services/" onClick={() => track('Click', 'card_4_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
@@ -202,14 +165,19 @@ function App() {
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
                   <h3>
-                    <span className="highlight">Merchandise trade</span>
+                    <span className="highlight">Global goods trade deficit</span>
                     {' '}
-                    bounced back from
+                    increased for developed economies in 2022 reaching
                     {' '}
-                    <span className="nowrap">COVID-19</span>
                   </h3>
-                  <NumberAnimation labels={['2020', '2021']} prefix="+" suffix="%" values={[-7.2, 26.5]} />
-                  <p>The growth was largely driven by fuels (+72%). In 2022, UNCTAD nowcasts show continued growth of 13.8%.</p>
+                  <div className="numbers_container">
+                    <div className="numbers_wrapper">
+                      <span className="number_value">
+                        {isVisible && (<CountUp easingFn={easingFn} start={0} delay={0.7} end={1.6} decimals={1} duration={4} separator="," useEasing prefix="" suffix=" trillion" />)}
+                        .
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <div className="bottom">
                   <a href="https://hbs.unctad.org/total-merchandise-trade/" onClick={() => track('Click', 'card_5_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
@@ -237,17 +205,17 @@ function App() {
                   isVisible && track('Scroll', 'card_6')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
-                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_commodities.svg`} alt="Commodities icon" /></div>
+                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/2023-handbook_of_statistics_commodities.svg`} alt="Commodities icon" /></div>
                   <h3>
-                    <span className="highlight">Commodity prices</span>
+                    <span className="highlight">Commodity exports</span>
                     {' '}
-                    soared in 2021
+                    increased in 2022.
                   </h3>
-                  <div className="numbers_container"><div className="numbers_wrapper"><span className="number_value">{isVisible && (<CountUp easingFn={easingFn} start={0} delay={0.7} end={55} decimals={0} duration={4} separator="," useEasing prefix="+" suffix="%" />)}</span></div></div>
-                  <p>Fuels accounted for 22 percentage points of the growth. The upward trend continued this year, with prices hitting their highest levels in nearly three decades.</p>
+                  <NumberAnimation labels={['Fuel', 'Food']} prefix="+" suffix="%" decimals={0} values={[62, 10]} />
+                  <p>Fuel exports grew due to higher prices.</p>
                 </div>
                 <div className="bottom">
-                  <a href="https://hbs.unctad.org/prices/" onClick={() => track('Click', 'card_6_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
+                  <a href="https://hbs.unctad.org/merchandise-trade-by-product/" onClick={() => track('Click', 'card_6_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
                   <div className="source">
                     <em>Source</em>
                     {' '}
@@ -272,18 +240,17 @@ function App() {
                   isVisible && track('Scroll', 'card_7')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
-                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_plane.svg`} alt="Commodities icon" /></div>
                   <h3>
-                    <span className="highlight">International travel</span>
+                    UNCTAD nowcasts
                     {' '}
-                    has not recovered to
+                    <span className="highlight">GDP growth</span>
                     {' '}
-                    <span className="nowrap">pre-pandemic levels</span>
+                    to slow in 2023.
                   </h3>
-                  <p>In 2021, travel exports were still less than half (42%) their value in 2019.</p>
+                  <NumberAnimation labels={['2022', '2023']} prefix="+" suffix="%" decimals={1} values={[3.1, 2.2]} />
                 </div>
                 <div className="bottom">
-                  <a href="https://hbs.unctad.org/trade-in-services-by-category/" onClick={() => track('Click', 'card_7_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
+                  <a href="https://hbs.unctad.org/gross-domestic-product/" onClick={() => track('Click', 'card_7_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
                   <div className="source">
                     <em>Source</em>
                     {' '}
@@ -309,14 +276,15 @@ function App() {
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
                   <h3>
-                    <span className="highlight">Export diversification</span>
+                    <span className="highlight">Reduction of economic inequality</span>
                     {' '}
-                    remains a challenge for developing countries
+                    stalls.
                   </h3>
-                  <p>Western Asia and Northern Africa had the least diversified basket of exports, followed by Oceania and Sub-Saharan Africa.</p>
+                  <NumberAnimation labels={['GDP', 'Population']} prefix="" suffix="%" decimals={0} values={[63, 17]} />
+                  <p>The richest economies in the world account for most of the GDP but about one sixth of the global population.</p>
                 </div>
                 <div className="bottom">
-                  <a href="https://hbs.unctad.org/trade-indicators/" onClick={() => track('Click', 'card_8_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
+                  <a href="https://hbs.unctad.org/gross-domestic-product/" onClick={() => track('Click', 'card_8_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
                   <div className="source">
                     <em>Source</em>
                     {' '}
@@ -338,19 +306,26 @@ function App() {
             {(isVisible) => (
               <>
                 {
-                  isVisible && track('Scroll', 'card_9')
+                  isVisible && track('Scroll', 'card_10')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
                   <h3>
-                    <span className="highlight">Least developed countries’</span>
+                    The world’s population surpassed
                     {' '}
-                    economic growth in 2021 was slow
+                    <span className="highlight">8&nbsp;billion people</span>
+                    {' '}
+                    in 2022
                   </h3>
-                  <NumberAnimation labels={['LDCs', 'Global']} prefix="+" suffix="%" values={[2.0, 5.7]} />
-                  <p>GDP growth in LDCs fell far short of the 7% target enshrined in the UN’s 2030 Agenda for Sustainable Development.</p>
+                  <People />
+                  <p>
+                    Five in six people live in a
+                    {' '}
+                    <span style={{ color: '#72bf44', fontWeight: '500' }}>developing economy</span>
+                    .
+                  </p>
                 </div>
                 <div className="bottom">
-                  <a href="https://hbs.unctad.org/gross-domestic-product/" onClick={() => track('Click', 'card_9_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
+                  <a href="https://hbs.unctad.org/total-and-urban-population/" onClick={() => track('Click', 'card_10_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
                   <div className="source">
                     <em>Source</em>
                     {' '}
@@ -376,17 +351,14 @@ function App() {
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
                   <h3>
-                    The world’s population hit
+                    <span className="highlight">Old-age dependency</span>
                     {' '}
-                    <span className="highlight">8&nbsp;billion people</span>
-                    {' '}
-                    in November 2022
+                    increases, causing total dependency ratios to increase
                   </h3>
-                  <People />
-                  <p>But the growth has been declining since the late 1980s. In 2021, it dipped to +0.87%, down from +1.05% in 2019.</p>
+                  <p>Total dependency ratios are increasing everywhere except in Africa, where it’s expected to continue to decline beyond 2050.</p>
                 </div>
                 <div className="bottom">
-                  <a href="https://hbs.unctad.org/total-and-urban-population/" onClick={() => track('Click', 'card_10_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
+                  <a href="https://hbs.unctad.org/age-structure/" onClick={() => track('Click', 'card_10_link')} className="readmore" target="_blank" rel="noreferrer">Dive into the data</a>
                   <div className="source">
                     <em>Source</em>
                     {' '}
@@ -411,14 +383,13 @@ function App() {
                   isVisible && track('Scroll', 'card_11')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
-                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_computer.svg`} alt="Commodities icon" /></div>
+                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/2023-handbook_of_statistics_computer.svg`} alt="Commodities icon" /></div>
                   <h3>
                     <div>See the e-version of the Handbook.</div>
                     <div className="highlight">Interact with the data.</div>
                   </h3>
-                  <a href="https://hbs.unctad.org/" onClick={() => track('Click', 'card_11_link')} className="readmore" target="_blank" rel="noreferrer">e-Handbook of Statistics 2022</a>
-                  <a href="https://unctad.org/webflyer/handbook-statistics-2022" onClick={() => track('Click', 'webflyer_link')} className="readmore" target="_blank" rel="noreferrer">Download the report (pdf)</a>
-                  <a href="https://www.youtube.com/watch?v=goQ_gEP3ihk" onClick={() => track('Click', 'video_link')} className="readmore" target="_blank" rel="noreferrer">Watch the video</a>
+                  <a href="https://hbs.unctad.org/" onClick={() => track('Click', 'card_11_link')} className="readmore" target="_blank" rel="noreferrer">e-Handbook of Statistics 2023</a>
+                  {/* <a href="https://www.youtube.com/watch?v=goQ_gEP3ihk" onClick={() => track('Click', 'video_link')} className="readmore" target="_blank" rel="noreferrer">Watch the video</a> */}
                 </div>
               </>
             )}

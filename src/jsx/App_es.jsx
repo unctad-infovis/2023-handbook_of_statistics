@@ -18,7 +18,7 @@ import NumberAnimation from './components/NumberAnimation.jsx';
 
 const analytics = window.gtag || undefined;
 
-// const appID = '#app-root-2022-handbook_of_statistics';
+// const appID = '#app-root-2023-handbook_of_statistics';
 
 function App() {
   const track = (label, name) => {
@@ -230,7 +230,7 @@ function App() {
                   isVisible && track('Scroll', 'card_6')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
-                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_commodities.svg`} alt="Commodities icon" /></div>
+                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/2023-handbook_of_statistics_commodities.svg`} alt="Commodities icon" /></div>
                   <h3>
                     <span className="highlight">Los precios de las materias primas</span>
                     {' '}
@@ -265,7 +265,7 @@ function App() {
                   isVisible && track('Scroll', 'card_7')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
-                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_plane.svg`} alt="Commodities icon" /></div>
+                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/2023-handbook_of_statistics_plane.svg`} alt="Commodities icon" /></div>
                   <h3>
                     <span className="highlight">Los viajes internacionales</span>
                     {' '}
@@ -402,7 +402,7 @@ function App() {
                   isVisible && track('Scroll', 'card_11')
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
-                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-handbook_of_statistics/' : './'}assets/img/2022-handbook_of_statistics_computer.svg`} alt="Commodities icon" /></div>
+                  <div className="icon_container"><img src={`${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/2023-handbook_of_statistics_computer.svg`} alt="Commodities icon" /></div>
                   <h3>
                     <div>Consulte la versión electrónica del Manual.</div>
                     <div className="highlight">Interactuar con los datos.</div>

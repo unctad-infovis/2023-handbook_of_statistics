@@ -29,7 +29,7 @@ function Arrows({ next }) {
   return (
     <IsVisible once>
       {(isVisible) => (
-        <button type="button" className={`arrows_container ${isVisible ? 'visible' : ''}`} onClick={() => anchorClick(`.content_wrapper_${next}`, 'Videos')}>
+        <button type="button" aria-label="continue" className={`arrows_container ${isVisible ? 'visible' : ''}`} onClick={() => anchorClick(`.content_wrapper_${next}`, 'Videos')}>
           <svg className="arrows">
             <path className="a1" d="M0 0 L30 32 L60 0" />
             <path className="a2" d="M0 20 L30 52 L60 20" />
