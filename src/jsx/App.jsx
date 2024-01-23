@@ -101,7 +101,7 @@ function App() {
                   <h3>
                     <span className="highlight">Goods exports</span>
                     {' '}
-                    declined in the first half of 2023 after an increase in 2022.
+                    value declined in the first half of 2023 after an increase in 2022.
                   </h3>
                   <NumberAnimation labels={['2022', 'Jan-Jun 2023']} prefix="+" suffix="%" values={[11.4, -4.6]} />
                 </div>
@@ -134,7 +134,7 @@ function App() {
                   <h3>
                     <span className="highlight">Trade in services</span>
                     {' '}
-                    rebounded in 2022 and UNCTAD nowcasts growth in 2023.
+                    value rebounded in 2022 and UNCTAD nowcasts growth in 2023.
                   </h3>
                   <NumberAnimation labels={['2022', '2023']} prefix="+" suffix="%" values={[14.8, 7.0]} />
                 </div>
