@@ -132,7 +132,7 @@ function App() {
                 }
                 <div className={`content ${isVisible ? 'visible' : ''}`}>
                   <h3>
-                    <span className="highlight">Trade in services</span>
+                    <span className="highlight">Services exports</span>
                     {' '}
                     value rebounded in 2022 and UNCTAD nowcasts growth in 2023.
                   </h3>
@@ -209,7 +209,7 @@ function App() {
                   <h3>
                     <span className="highlight">Commodity exports</span>
                     {' '}
-                    increased in 2022.
+                    value increased in 2022.
                   </h3>
                   <NumberAnimation labels={['Fuel', 'Food']} prefix="+" suffix="%" decimals={0} values={[62, 10]} />
                   <p>Fuel exports grew due to higher prices.</p>
