@@ -1,4 +1,4 @@
-import React, { /* useState, */ } from 'react';
+import React, { useCallback/* , useState, */ } from 'react';
 import '../styles/styles.less';
 
 // https://www.npmjs.com/package/typewriter-effect
@@ -16,20 +16,20 @@ import Arrows from './components/Arrows.jsx';
 import People from './components/People.jsx';
 import NumberAnimation from './components/NumberAnimation.jsx';
 
-const analytics = window.gtag || undefined;
-
 // const appID = '#app-root-2023-handbook_of_statistics';
 
 function App() {
-  const track = (label, name) => {
-    if (typeof analytics !== 'undefined') {
-      analytics('event', name, {
-        event_category: '2022-hbs_report_es',
-        event_label: label,
-        transport_type: 'beacon'
+  const analytics = window.gtag || undefined;
+  const track = useCallback((label_event = false, value_event = false) => {
+    if (typeof analytics !== 'undefined' && label_event !== false && value_event !== false) {
+      analytics('event', 'project_interaction', {
+        label: label_event,
+        project_name: '2023-hbs_report_fr',
+        transport_type: 'beacon',
+        value: value_event
       });
     }
-  };
+  }, [analytics]);
   return (
     <div className="app">
       {/** ******
