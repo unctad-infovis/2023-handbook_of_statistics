@@ -75,7 +75,7 @@ function App() {
                   </p>
                 </div>
                 <div className="unctad_logo_container">
-                  <img src="https://unctad.org/sites/default/files/2022-12/unctad_logo_es.svg" alt="UNCTAD logo" />
+                  <img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-handbook_of_statistics/' : './'}assets/img/unctad_logo_es.svg`} alt="UNCTAD logo" />
                 </div>
               </>
             )}
