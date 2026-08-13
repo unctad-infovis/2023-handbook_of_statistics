@@ -45,7 +45,4 @@ Arrows.propTypes = {
   next: PropTypes.string.isRequired,
 };
 
-Arrows.defaultProps = {
-};
-
 export default memo(Arrows);
